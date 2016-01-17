@@ -1,5 +1,3 @@
-# migrations-exercise
-
 # What are Migrations
 Just like how we use Git to version control source code, we use migrations to manage the state of our database schemas.
 
@@ -7,6 +5,9 @@ Just like how we use Git to version control source code, we use migrations to ma
 Imagine you're working on project with another developer, and you're both tasked with creating a specific part of an event planning application. Let's say you are in charge of creating the `Users` and your friend is going to create the `Events`.
 
 Let's say you and your friend divided the work in a way so that neither of you will have to to use each other's code to finish your tasks. While you're working on your part of the application, you only really need to touch the `Users` table when you are working with the database.
+
+# Before you begin
+Make sure that the project you are in is a node project (it has a `package.json`) and you have already installed and initialized sequelize (`npm install --save sequelize`, `sequelize init`).
 
 # Creating models and migrations
 
@@ -27,40 +28,22 @@ Notice the `--name` and `--attributes` _flags_. these let us tell the program th
 For a list of all the valid data types Sequelize has to offer, see: http://docs.sequelizejs.com/en/latest/api/datatypes/
 
 This will generate 2 files for you:
-**models/User.js**
+**models/user.js**
 ```
 'use strict';
-module.exports = {
-  up: function(queryInterface, Sequelize) {
-    return queryInterface.createTable('Users', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      first_name: {
-        type: Sequelize.STRING
-      },
-      last_name: {
-        type: Sequelize.STRING
-      },
-      bio: {
-        type: Sequelize.TEXT
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+module.exports = function(sequelize, DataTypes) {
+  var User = sequelize.define('User', {
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    username: DataTypes.STRING
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
       }
-    });
-  },
-  down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('Users');
-  }
+    }
+  });
+  return User;
 };
 ```
 
