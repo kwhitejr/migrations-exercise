@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kwhitejr/migrations-exercise#readme",
   "dependencies": {
+    "express": "^4.13.3",
     "faker": "^3.0.1",
     "pg": "^4.4.3",
     "pg-hstore": "^2.3.2",
