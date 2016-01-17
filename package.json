@@ -1,0 +1,22 @@
+{
+  "name": "migration-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwhitejr/migrations-exercise.git"
+  },
+  "author": "Kevin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwhitejr/migrations-exercise/issues"
+  },
+  "homepage": "https://github.com/kwhitejr/migrations-exercise#readme",
+  "dependencies": {
+    "sequelize": "^3.17.3"
+  }
+}
