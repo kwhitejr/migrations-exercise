@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Users = sequelize.define('Users', {
+  var Users = sequelize.define('User', {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     bio: DataTypes.TEXT,
